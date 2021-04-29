@@ -1,51 +1,3 @@
-﻿// -- Ранговая система.
-
-_nameplayer = name player;
-if ((_nameplayer find "CS" !=-1) || (_nameplayer find "CPL" !=-1)) then 
-{
-	player setRank "CORPORAL"
-} 
-else 
-{
-	if ((_nameplayer find "MSG" !=-1) || (_nameplayer find "SG" !=-1) || (_nameplayer find "SSG" !=-1) || (_nameplayer find "SPSG" !=-1)) then 
-	{
-		player setRank "SERGEANT"
-	} 
-	else 
-	{
-		if ((_nameplayer find "MLT" !=-1) || (_nameplayer find "LT" !=-1) || (_nameplayer find "SLT" !=-1) || (_nameplayer find "SPLT" !=-1)) then 
-		{
-			player setRank "LIEUTENANT"
-		} 
-		else 
-		{
-			if ((_nameplayer find "CPT" !=-1) || (_nameplayer find "MAJ" !=-1)) then 
-			{
-				player setRank "CAPTAIN"
-			} 
-			else 
-			{
-				if ((_nameplayer find "COL" !=-1) || (_nameplayer find "CC" !=-1) || (_nameplayer find "MC" !=-1) || (_nameplayer find "GEN" !=-1)) then 
-				{
-					player setRank "COLONEL"
-				}
-			}
-		}
-	}
-};
-
-//Зевсы
-[] spawn
-{
-	_curatorUIDs = getArray (missionConfigFile >> "Curators" >> "list");
-
-	if (getPlayerUID player in _curatorUIDs) then
-	{
-		waitUntil {player isEqualTo vehicle player};
-		[vehicle player] remoteExec ["HashCode_Curator_HandleRespawn",2];
-	};
-};
-
 // -- РП вступление.
 
 switch (playerSide) do 
@@ -55,7 +7,7 @@ switch (playerSide) do
 		_dayTime = [daytime] call BIS_fnc_timeToString;
 		[
 			[
-			["Планета: Тифарис, База ВАР","size = '0.7'"],
+			["Планета: Ульдум, База ВАР","size = '0.7'"],
 			["","<br/>"],
 			["Местное время: ","size = '0.7'"],
 			[str _dayTime,"size = '0.7'"],
@@ -70,7 +22,7 @@ switch (playerSide) do
 		_dayTime = [daytime] call BIS_fnc_timeToString;
 		[
 			[
-			["Планета: Тифарис, Неизвестное место","size = '0.7'"],
+			["Планета: Ульдум, Неизвестное место","size = '0.7'"],
 			["","<br/>"],
 			["Местное время: ","size = '0.7'"],
 			[str _dayTime,"size = '0.7'"],

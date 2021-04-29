@@ -57,59 +57,72 @@ class MainSpawn
 			"TX-130",
 			"3as_saber_m1",
 			"vehicle_count_spawn_1",
-			2,
+			3,
 			"gui_spawner\images\vehicles\tx130mk1.paa"
 		},
 		{
-			"БТР ""Банта""",
-			"212th_B_APC_Wheeled_01_cannon_F",
+			"TX-Recon",
+			"3as_saber_m1Recon",
 			"vehicle_count_spawn_2",
-			3,
+			5,
+			"gui_spawner\images\vehicles\tx130mk1.paa"
+		},
+		{
+			"БТР Банта",
+			"212th_B_APC_Wheeled_01_cannon_F",
+			"vehicle_count_spawn_3",
+			6,
 			"gui_spawner\images\vehicles\batha.paa"
 		},
 		{
 			"Машина технического обслуживания ""Варден""",
 			"212AA_Galoomp",
-			"vehicle_count_spawn_3",
-			2
+			"vehicle_count_spawn_4",
+			4
 		},
 		{
 			"Легкий транспорт RTT",
 			"3as_RTT",
-			"vehicle_count_spawn_4",
-			2,
+			"vehicle_count_spawn_5",
+			4,
 			"gui_spawner\images\vehicles\rtt.paa"
 		},
 		{
 			"BARC спидер",
 			"ls_ground_barc",
-			"vehicle_count_spawn_5",
-			10,
+			"vehicle_count_spawn_6",
+			15,
 			"gui_spawner\images\vehicles\barc.paa"
 		},
 		{
 			"Транспортник - Накрытый",
 			"442_argon_covered",
-			"vehicle_count_spawn_6",
-			5
+			"vehicle_count_spawn_7",
+			10
 		},
 		{
 			"Транспортник - Обычный",
 			"442_argon_transport",
-			"vehicle_count_spawn_7",
-			5
+			"vehicle_count_spawn_8",
+			10
 		},
 		{
 			"Транспортник - Оружейный",
 			"442_argon_ammo",
-			"vehicle_count_spawn_8",
-			2
+			"vehicle_count_spawn_9",
+			3
 		},
 		{
 			"Warthog 4ёх местный",
 			"OPTRE_M12_FAV",
-			"vehicle_count_spawn_9",
-			5
+			"vehicle_count_spawn_10",
+			6
+		},
+		{
+			"Warthog 8ми местный",
+			"OPTRE_M813_TT",
+			"vehicle_count_spawn_11",
+			4
 		}
 	};
 	spawnpoints[] = 
@@ -132,7 +145,7 @@ class BigSpawn
 			"big_count_spawn_1",
 			4,
 			"gui_spawner\images\vehicles\av7.paa"
-		},
+		}
 		/*{
         "HAVw A6 Juggernaut",
 		"3as_Jug",
@@ -167,14 +180,20 @@ class AirSpawn
 			"LAAT/I (Gunship)",
 			"ls_laat_ab",
 			"laat_count_spawn_1",
-			6
+			4
+		},
+		{
+			"LAAT/I (Pylons)",
+			"ls_laat",
+			"laat_count_spawn_2",
+			4
 		},
 		{
 			"LAAT/I Gunship (Medevac)",
 			"ls_laat_medevac",
-			"laat_count_spawn_2",
+			"laat_count_spawn_3",
 			1
-		},
+		}
 		/*{
 			"Z95",
 			"3as_Z95_Republic",
@@ -186,8 +205,7 @@ class AirSpawn
 	{
 		{"ВПП #1",{"air_spawn_0"},true},
 		{"ВПП #2",{"air_spawn_1"},true},
-		{"ВПП #3",{"air_spawn_2"},true},
-		{"ВПП #4",{"air_spawn_3"},true}
+		{"ВПП #3",{"air_spawn_2"},true}
 	};
 };
 
@@ -205,23 +223,29 @@ class Z95Spawn
 			6
 		},
 		{
-			"V19",
-			"lsd_air_v19",
+			"ARC-170",
+			"3as_arc_170_razor",
 			"z95_count_spawn_2",
+			4
+		},
+		{
+			"V19",
+		    "lsd_air_v19",
+			"z95_count_spawn_3",
 			3
 		},
 		{
 			"[Jedi] Aircar",
 			"MEOP_veh_aerocar_MercBlue",
-			"z95_count_spawn_3",
+			"z95_count_spawn_4",
 			3
 		},
 		{
 			"[Jedi] Codiak",
 			"MEOP_veh_kodiakArm_old_blue",
-			"z95_count_spawn_4",
+			"z95_count_spawn_5",
 			2
-		},
+		}
 	};
 	spawnpoints[] = 
 	{
@@ -241,19 +265,19 @@ class UkrainianSpawn
 			"Warthog 2ух местный",
 			"OPTRE_M914_RV",
 			"vehicle_count_spawn_1",
-			5,
+			10
 		},
 		{
 			"Warthog 4ёх местный",
 			"OPTRE_M12_FAV",
 			"vehicle_count_spawn_2",
-			5,
+			10
 		},
 		{
 			"Warthog 8ми местный",
 			"OPTRE_M813_TT",
 			"vehicle_count_spawn_3",
-			5
+			10
 		},
 		{
 			"BARC спидер",
@@ -286,12 +310,116 @@ class SsdSpawn
 		{
 			"БМК",
 			"HMCS",
-			"ssd_count_spawn_1",
+			"ssd_count_spawn_2",
 			3
 		}
 	};
 	spawnpoints[] = 
 	{
 		{"Точка №1",{"ssd_spawn_1"},true}
+	};
+};
+
+class QiSpawn
+{	
+	conditionToAccess = "true";
+
+	vehicles[] = 
+	{
+		{"=====Наземная техника=====","","","","",""},
+		        {
+			            "BARC спидер",
+			            "ls_ground_barc",
+			            "qi_count_spawn_1",
+			            3,
+			            "gui_spawner\images\vehicles\barc.paa"
+                },
+                {
+                        "Warthog 8ми местный",
+                        "OPTRE_M813_TT",
+                        "qi_count_spawn_2",
+                        2
+                },
+                {
+                        "Warthog 4ёх местный",
+                        "OPTRE_M12_FAV",
+                        "qi_count_spawn_3",
+                        2
+                },
+                {
+                        "М-30 Bullhead (БТР)",
+                        "C_mako_m30_civ_F",
+                        "qi_count_spawn_4",
+                        1
+		        }
+	};
+	spawnpoints[] = 
+	{
+		{"Точка №1",{"qi_spawn_1"},true}
+	};
+};
+
+class UkrainianAirSpawn
+{	
+	conditionToAccess = "true";
+
+	vehicles[] = 
+	{
+		{"=====Воздушная техника=====","","","","",""},
+		{
+			"UH-144 Falcon",
+			"OPTRE_UNSC_falcon",
+		    "air_count_spawn_1",
+			10
+		},
+		{
+			"UH-144 Falcon (Unarmed)",
+			"OPTRE_UNSC_falcon_unarmed",
+			"air_count_spawn_2",
+			10
+		},
+		{
+			"D77H-TCI Pelican",
+			"OPTRE_Pelican_unarmed",
+			"air_count_spawn_3",
+			10
+		},
+		{
+			"D77H-TCI/AV Pelican",
+			"OPTRE_Pelican_armed",
+			"air_count_spawn_4",
+			10
+		}
+	};
+	spawnpoints[] = 
+	{
+		{"ВПП №1",{"ukrainian_airspawn_1"},true},
+		{"ВПП №2",{"ukrainian_airspawn_0"},true}
+	};
+};
+
+class QiAirSpawn
+{	
+	conditionToAccess = "true";
+
+	vehicles[] = 
+	{
+		{"=====Воздушная техника=====","","","","",""},
+                {
+			"X3M Aircar (4ёх местный)",
+			"MEOP_veh_aerocar_Civ",
+		        "qiair_count_spawn_1",
+			3
+		},
+                {
+			"UT-47A Kodiak (13ти местный)",
+			"MEOP_veh_kodiak3_alliance",
+			"qiair_count_spawn_2",
+			1
+		}
+        };
+	spawnpoints[] = 
+	{
+		{"ВПП",{"qiair_spawn_1"},true},
 	};
 };

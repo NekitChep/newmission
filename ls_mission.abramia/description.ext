@@ -1,9 +1,10 @@
-#include "defineDIKCodes.inc"
-#include "Config_Wiki.hpp"
-#include "infiSTAR_AdminMenu.hpp"
-//#include "ACEX_Fortify_Presets.hpp"
-#include "scripts\achievements_config.hpp"
-#include "curator.hpp"
+#include "cfgs\defines.hpp"
+#include "cfgs\dialog.hpp"
+#include "cfgs\defineDIKCodes.inc"
+#include "cfgs\infiSTAR_AdminMenu.hpp"
+//#include "cfgs\ACEX_Fortify_Presets.hpp"
+#include "cfgs\curator.hpp"
+#include "cfgs\whitelists.hpp"
 
 cba_settings_hasSettingsFile = 1;
 respawn = "BASE";
@@ -26,7 +27,7 @@ onLoadName="Операция ""Воля угнетённых""";
 class CfgDiscordRichPresence {
     applicationID="701911038626627664";					// Provided by discord
     defaultDetails="May the Force be with you!";		// Upper text
-    defaultState="discord.link/laststand";			// Lower text
+    defaultState="discord.link/laststand";				// Lower text
     defaultLargeImageKey="sfrp";						// Large image
     defaultLargeImageText="Arma 3 The Last Stand RP";	// Large image hover text
     defaultSmallImageKey="arma3";						// Small image
@@ -79,6 +80,28 @@ class CfgRemoteExec
 
 class CfgClients {
 	class LS_Shops {
-		#include "spawner_config.hpp" 
+		#include "cfgs\spawner_config.hpp" 
+	};
+};
+
+class CfgFunctions
+{
+	class ls
+	{
+		class ls_fnc{
+			class cadet {};
+			class rank {};
+			class zeus {};
+			class credits {};
+			class bacta {};
+			class autobacta {};
+			class jump {};
+			class autorepair {};
+			class save {};
+			class equip {};
+			class position {};
+			class whitelist {};
+			class systems {};
+		};
 	};
 };

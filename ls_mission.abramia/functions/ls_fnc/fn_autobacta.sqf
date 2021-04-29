@@ -1,7 +1,8 @@
 used = player getVariable 'Heal_Used';
 last_used = player getVariable 'Last_Used';
+if (!(player call ace_medical_status_fnc_isInStableCondition)) then {
 if ((uniform player in UniformList) && ("ACE_personalAidKit" in (items player))) then {
-if (time - last_used < 30) then
+if (time - last_used < 600) then
 	{
 		hint format ["Бакта ещё не готова к использованию!"];
 	}
@@ -29,4 +30,5 @@ if (time - last_used < 30) then
 			hintSilent "";
 		};
 	};
+};
 };

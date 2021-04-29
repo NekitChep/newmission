@@ -14,6 +14,26 @@ pvpfw_chatIntercept_allCommands = [
 		{player setVelocity [0,0,4]}
 	],
 	[
+		"im",
+		{	
+			if((getPlayerUID player) in getArray (missionConfigFile >> "Curators" >> "list"))then{
+			[[[_this select 0], "scripts\chat\massmessage.sqf"], "execVM", 
+			playerSide] call BIS_fnc_MP;
+			}else{
+			("ivmassmessage" call BIS_fnc_rscLayer) cutRsc ["massmessage","PLAIN"];
+			_chatlist = uiNamespace getVariable "massmessage" displayCtrl 11001;
+			_chatlist ctrlSetStructuredText parseText format ["<t color='#00FF00' align='center' size='0.8'>Доступ только у штабного офицера</t>"];
+			};
+		}
+	],
+	[
+		"clrim",
+		{
+			uiNamespace getVariable "saveEquipdialog" displayCtrl 11000 ctrlSetStructuredText "";
+			("equipDialog" call BIS_fnc_rscLayer) cutText["", "PLAIN", 0, false];
+		}
+	],
+	[
 		"echo",
 		{
 			_argument = (_this select 0);
@@ -94,6 +114,12 @@ pvpfw_chatIntercept_allCommands = [
 		{
 		_bob5 = (_this select 0);
 		[] execVM "scripts\chat\targetmarker.sqf";
+		}
+	],
+	[
+		"save",
+		{
+			[] spawn ls_fnc_save;
 		}
 	]
 ];
